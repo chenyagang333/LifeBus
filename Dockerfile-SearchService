@@ -31,4 +31,5 @@ RUN dotnet publish "./SearchService.csproj" -c $BUILD_CONFIGURATION -o /app/publ
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "SearchService.dll"]
+# 在 ENTRYPOINT 中添加等待时间的命令
+ENTRYPOINT ["sh", "-c", "sleep 5 && dotnet SearchService.WebAPI.dll"]
