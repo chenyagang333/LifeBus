@@ -67,6 +67,7 @@ identityBuilder.AddEntityFrameworkStores<UserDbContext>().AddDefaultTokenProvide
 
 #endregion
 
+
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddScoped<IEmailSender, MockEmailSender>();
