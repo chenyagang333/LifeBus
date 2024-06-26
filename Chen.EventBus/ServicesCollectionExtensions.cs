@@ -60,7 +60,7 @@ public static class ServicesCollectionExtensions
             var factory = new ConnectionFactory()
             {
                 HostName = optionMQ.HostName,
-                DispatchConsumersAsync = true
+                DispatchConsumersAsync = true,
             };
             // eventBus 归 DI 管理，释放的时候会调用 Dispose
             // eventBus 的 Dispose 中会销毁 RabbitMQConnection
